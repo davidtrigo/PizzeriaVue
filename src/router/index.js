@@ -37,7 +37,31 @@ Vue.use(VueRouter)
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "register" */ '../views/Register.vue')
-  }
+  },
+  {
+    path: '/pizzas/add',
+    name: 'AddPizza',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "addPizza" */ '../views/AddPizza.vue')
+  },
+
+  
+ {
+  path: '/pizzas/edit/:idPizza',
+  name: 'EditPizza',
+  // route level code-splitting
+  // this generates a separate chunk (about.[hash].js) for this route
+  // which is lazy-loaded when the route is visited.
+  component: () => import(/* webpackChunkName: "editPizza" */ '../views/EditPizza.vue')
+  
+
+ }
+  
+ 
+
+
 ]
 
 const router = new VueRouter({
