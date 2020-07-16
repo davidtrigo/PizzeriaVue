@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PizzaList msg="Welcome to Your Vue.js App"/>
+    <PizzaList msg="Welcome to Pizzeria"/>
   </div>
 </template>
 
