@@ -1,8 +1,20 @@
 <template>
   <div>
     <h1>Listado de Pizzas</h1>
-    <div v-auth = "'admin'">
+    <!--TODO  poner la directiva auth en div  v-auth = "'admin'" -->
+    <div >
      Usuario Admin
+     <ul>
+       <li>
+          <router-link to="/pizzas/add">Add Pizza</router-link>
+       </li>
+        <li>
+          <router-link to="/pizzas/edit/12">Edit Pizza 12</router-link>
+       </li>
+     </ul>
+   
+
+      
     </div>
  
   </div>
