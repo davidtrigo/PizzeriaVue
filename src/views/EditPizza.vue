@@ -1,5 +1,13 @@
 <template>
-  <div >
-    <h1>Editando pizza {{ $route.params.idPizza }}</h1>
+  <div>
+    Editando pizza {{id}}
   </div>
 </template>
+
+<script>
+
+export default {
+  name: 'EditPizza',
+  props: ['id'],
+}
+</script>
