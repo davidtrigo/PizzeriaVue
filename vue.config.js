@@ -6,3 +6,6 @@ module.exports = {
       config.plugins.delete ('prefetch') 
     }
   }
+
+
+  //  devtool: 'inline-source-map'  produccion
