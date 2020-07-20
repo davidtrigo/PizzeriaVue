@@ -4,7 +4,7 @@
     <!--TODO  poner la directiva auth en div  v-auth = "'admin'" -->
     <div >
      Usuario Admin
-     <ul>
+     <ul  v-auth = "'admin'" >
        <li>
           <router-link to="/pizzas/add">Add Pizza</router-link>
        </li>
