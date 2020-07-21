@@ -1,12 +1,12 @@
 <template>
   <label :for="name">
     {{text}}
-    <input :name="name" :type="type" v-model="value" />
+    <input :name="name" :type="type" :value="valueData" v-on ="inputListeners" /> 
   </label>
 </template>
 
 <script>
-import  Control from "./control";
+import Control from './control'
 
 export default {
   name: "Input",
@@ -37,13 +37,19 @@ export default {
     };
   },
   computed: {
+    valueData:function(){
+      return this.control.value;
+    },
     inputListeners: function() {
       var vm = this;
       return Object.assign({}, this.$listeners, {
         input: function(event) {
           const value = event.target.value;
+          const ctrl = vm.control;
           vm.$emit("input", value);
-          vm.control.validate(value);
+          ctrl.dirty = true;
+          ctrl.parent.dirty = true;
+          ctrl.validate(value);
         }
       });
     }
