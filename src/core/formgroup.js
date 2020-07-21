@@ -1,4 +1,4 @@
-class FormGroup{
+export default class FormGroup{
     constructor(){
       this.controls = {}
     }
@@ -6,4 +6,4 @@ class FormGroup{
       this.controls[control.name] = control;
     }
   }
-  module.exports = FormGroup;
+  

@@ -11,9 +11,9 @@
   </div>
 </template>
 <script>
-import Form from '../core/Form.vue';
-import FormGroup from '../core/formgroup';
-import Input from '../core/Input.vue';
+import Form from '../core/Form.vue'
+import FormGroup from '../core/formgroup'
+import Input from '../core/Input.vue'
  
 const LOGINVALIDATOR = [{
   fields: ["email"],
@@ -42,8 +42,8 @@ export default {
   },
 
   components: {
-    Form,
-    Input
+    Form ,
+   Input
   },
 
 

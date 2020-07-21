@@ -16,7 +16,7 @@ const validateFn = (value, validators) => {
     }
     return result;
   }
-class Control {
+export default class Control {
     constructor(name, value){
         this.name=name;
         this.value=value;
@@ -28,5 +28,4 @@ class Control {
         
     }
 }
-//export default new Control();
-module.exports = Control;
+
