@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { Control } from "./control";
+import  Control from "./control";
 
 export default {
   name: "Input",
