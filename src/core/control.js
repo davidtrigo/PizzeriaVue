@@ -1,9 +1,8 @@
 const validateFn = (value, validators) => {
   let result = true;
-  // normalizeEmail es sanitizer, devuelve si le paso "p" devuelve p
-  // isEmail es validador, se le pasa p y devuelve false pq no es email correcto
-  // en el caso de tener la siguiente expresión: normalizeEmail().isEmail().isLength(1,50)
-  // tal y como está el código si el email es false no se ejecuta isLength.
+  if (!validators) {
+    return result;
+  }
   for (const v of validators) {
     let args = [value, ...v.args]
     result = v.validator(...args)
@@ -16,33 +15,46 @@ const validateFn = (value, validators) => {
   }
   return result;
 }
-export default class Control {
-  constructor(name, value){
-      this.name=name;
-      this.value=value;
-      this.dirty = false;
-      this.error = null;
-      this.valid = true;
-      this._validator = null;
-      this.parent = null;
+
+function validateForm({controls}) {
+  let valid = true;
+  for (const key in controls) {
+    valid = controls[key].valid;
+    if(!valid){
+      break;
+    }
   }
-  set validator(value){
+  return valid;
+}
+
+export default class Control {
+  constructor(name, value) {
+    this.name = name;
+    this.value = value;
+    this.dirty = false;
+    this.error = null;
+    this.valid = false;
+    this._validator = null;
+    this.parent = null;
+  }
+  set validator(value) {
     this._validator = value;
     this.validate(this.value)
   }
-  validate(value){
-    if(!this._validator){
+  validate(value) {
+    if (!this._validator) {
       return;
     }
-    this.error = null;
-    const {validators, message} = this._validator;
-    this.valid = validateFn(value,validators)   
-    if(!this.valid){
-      this.error = message;//this._validator.message
-    }else{
-      this.value = value;
+    const { validators,message } = this._validator;
+    this.valid = validateFn(value, validators)
+    if (!this.valid) {
+      this.error = message;
+      this.parent.valid = false;
     }
-    this.parent.validate();
+    else {
+      this.value = value;
+      this.error = null;
+      this.parent.valid = validateForm(this.parent);
+    }
   }
 }
-

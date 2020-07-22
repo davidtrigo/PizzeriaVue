@@ -1,7 +1,8 @@
 <template>
   <label :for="name">
     {{text}}
-    <input :name="name" :type="type" :value="valueData" v-on ="inputListeners" /> 
+  <input :name="name" :type="type" :value="valueData" v-on ="inputListeners" />  
+    <p class="error" v-if= error>{{ control.error }}</p>
   </label>
 </template>
 
@@ -40,6 +41,9 @@ export default {
     valueData:function(){
       return this.control.value;
     },
+    error:function(){ 
+      return this.control.error && this.control.parent.dirty;
+    },
     inputListeners: function() {
       var vm = this;
       return Object.assign({}, this.$listeners, {
@@ -59,3 +63,11 @@ export default {
   }
 };
 </script>
+
+
+<style scoped>
+
+.error {
+    color: red;
+}
+</style>
