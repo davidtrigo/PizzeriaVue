@@ -1,9 +1,8 @@
 <template>
-  <form>
+  <form v-on:submit="submit">
     <slot></slot>
   </form>
 </template>
-
 <script>
 
 export default {

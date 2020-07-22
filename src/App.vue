@@ -7,8 +7,17 @@
     <router-view/>
   </div>
 </template>
+<script>
+import {Auth} from './userLib/auth'
+export default {
+  directives:{
+    Auth
+  }
+}
+</script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,7 +38,7 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-.hidden{
-  display:none
+.hidden {
+  display: none;
 }
 </style>

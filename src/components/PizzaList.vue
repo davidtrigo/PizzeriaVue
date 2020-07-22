@@ -21,8 +21,7 @@
 </template>
 
 <script>
-import {AuthDirective} from '../userlib/AuthDirective';
-
+ import {AuthDirective} from '../userlib/auth';
 export default {
   name: 'PizzaList',
   directives:{
@@ -33,4 +32,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>

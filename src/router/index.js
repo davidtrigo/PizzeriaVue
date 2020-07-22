@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Pizzas from '../views/Pizzas.vue'
-import guard from '../userlib/UserGuardService'
+import guard from '../userLib/guardservice'
 
 Vue.use(VueRouter)
 
