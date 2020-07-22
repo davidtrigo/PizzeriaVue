@@ -1,3 +1,4 @@
+
 const validateFn = (value, validators) => {
   let result = true;
   if (!validators) {

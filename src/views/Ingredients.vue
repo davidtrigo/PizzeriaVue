@@ -3,10 +3,9 @@
     <h1>Ingredientes</h1>
   </div>
 </template>
-
-
-<script>
+/*<script>
 export default {
   name: 'Ingredients', 
 }
 </script>
+*/

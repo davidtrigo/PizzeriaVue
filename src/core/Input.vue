@@ -4,7 +4,7 @@
     <input :id="name" :name="name" :type="type" :value="valueData" 
         v-on="inputListeners"
     />
-    <span  class="error" v-if="error">{{control.error}}</span>
+      <span  class="error" v-if="error">{{control.error}}</span>
   </label>
 </template>
 <script>
